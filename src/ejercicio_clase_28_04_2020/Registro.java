@@ -1,28 +1,30 @@
 package ejercicio_clase_28_04_2020;
-/*
-public class Registro implements Comparable {
 
-    private  int contVocal=0;
-    private final char VOCAL;
+public class Registro implements Comparable<Registro> {
+    private final char vocal;
+    private int contVocal;
 
-
-    public Registro(int contVocal, char VOCAL) {
+    public Registro(char vocal, int contVocal) {
+        this.vocal = vocal;
         this.contVocal = contVocal;
-        this.VOCAL = VOCAL;
     }
 
-   public void aumentarPosicion(char c){
 
+    public void incrementa(char c) {
         this.contVocal++;
 
     }
-    @Override
-    public int compareTo(Registro registro) {
-        int igual=0;
 
-
-
-        return igual;
+    public String toString() {
+        return "\nCarácter " + this.vocal + " aparece " + this.contVocal + " veces";
 
     }
-}*/
+
+    @Override
+    public int compareTo(Registro registro) {
+        Character caracter= this.vocal;
+        Character caracter2=registro.vocal;
+        return caracter.toString().toLowerCase().compareTo(caracter2.toString());
+
+    }
+}
